@@ -1,5 +1,4 @@
 // TODO: convert to arrow functions
-// TODO: might need separate functions for "percent" and "square root"
 
 //global variables
 let calculateInputText = document.getElementById("txtCalculator");
@@ -61,7 +60,6 @@ function whichOperation()
       runningTotal = firstNumber - secondNumber;
       break;
     case("*"):
-      //TODO: add functionality for percentages
       runningTotal = firstNumber * secondNumber;
       break;
     case("/"):
@@ -73,8 +71,6 @@ function whichOperation()
     case("%"):
       runningTotal = (firstNumber/100) * secondNumber;
       break;
-
-
     // case("."):
     //   calculateInputText.value += "."
     //   break;
