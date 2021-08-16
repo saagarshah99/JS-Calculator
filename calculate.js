@@ -68,8 +68,12 @@ function whichOperation()
       runningTotal = firstNumber / secondNumber;
       break;
     case("root"):
-      calculateInputText.value = "Sqrt: " + calculateInputText.value;
       runningTotal = Math.sqrt(secondNumber);
+      break;      
+    case("%"):
+      runningTotal = (firstNumber/100) * secondNumber;
+      break;
+
 
     // case("."):
     //   calculateInputText.value += "."
@@ -92,5 +96,7 @@ function resetCalculator()
 {
   calculateInputText.value = 0;
   runningTotal = 0;
+  firstNumber = 0;
+  secondNumber = 0;
 }
 resetCalculator();
