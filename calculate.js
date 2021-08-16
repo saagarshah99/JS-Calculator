@@ -11,16 +11,10 @@ let pendingOperation;
 function receiveNumber(numberInput)
 {
   event.preventDefault();
+  // const numberButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "."];
 
-  const numberButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ".", "%"];
-  for(let i=0; i<numberButtons.length; i++)
-  {
-    if(numberInput === numberButtons[i])
-    {      
-      calculateInputText.value += numberButtons[i];
-      removeStartingZero();      
-    }
-  }
+  calculateInputText.value += numberInput;
+  removeStartingZero();
 }
 
 //numbers generally don't start with 0
@@ -34,7 +28,7 @@ function receiveOperation(operationInput)
 {
   event.preventDefault();
   
-  firstNumber = Number(calculateInputText.value);
+  firstNumber = parseFloat(calculateInputText.value);
   pendingOperation = operationInput;
   
   calculateInputText.value = "0";
@@ -49,7 +43,7 @@ function receiveOperation(operationInput)
 //performing the requested calculation by running through a series of switch cases
 function whichOperation()
 {
-  secondNumber = Number(calculateInputText.value);
+  secondNumber = parseFloat(calculateInputText.value);
   
   switch(pendingOperation)
   {
