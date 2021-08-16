@@ -17,8 +17,8 @@
     
       <div class="calculator__buttons">
         <input type="reset" class="calculator__button light" onclick="resetCalculator()" value="C">
-        <button class="calculator__button light" onclick="resetCalculator('root')">&Sqrt;</button>
-        <button class="calculator__button light">%</button>
+        <button class="calculator__button light" onclick="receiveOperation('root')">&Sqrt;</button>
+        <button class="calculator__button light" onclick="receiveNumber('%')">%</button>
         <button class="calculator__button orange" onclick="receiveOperation('/')">&divide;</button>
         
         <button class="calculator__button" onclick="receiveNumber(7)">7</button>

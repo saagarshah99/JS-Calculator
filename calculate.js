@@ -13,7 +13,7 @@ function receiveNumber(numberInput)
 {
   event.preventDefault();
 
-  const numberButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "."];
+  const numberButtons = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ".", "%"];
   for(let i=0; i<numberButtons.length; i++)
   {
     if(numberInput === numberButtons[i])
@@ -67,6 +67,10 @@ function whichOperation()
     case("/"):
       runningTotal = firstNumber / secondNumber;
       break;
+    case("root"):
+      calculateInputText.value = "Sqrt: " + calculateInputText.value;
+      runningTotal = Math.sqrt(secondNumber);
+
     // case("."):
     //   calculateInputText.value += "."
     //   break;
