@@ -1,0 +1,51 @@
+<!-- https://scotch.io/bar-talk/build-a-css-grid-calculator-solution-to-code-challenge-2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saagar's Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+
+    <form>
+      <input type="number" class="calculator__input" id="txtCalculator" value="0" />
+    
+      <div class="calculator__buttons">
+        <input type="reset" class="calculator__button light" onclick="resetCalculator()" value="C">
+        <button class="calculator__button light" onclick="resetCalculator('root')">&Sqrt;</button>
+        <button class="calculator__button light">%</button>
+        <button class="calculator__button orange" onclick="receiveOperation('/')">&divide;</button>
+        
+        <button class="calculator__button" onclick="receiveNumber(7)">7</button>
+        <button class="calculator__button" onclick="receiveNumber(8)">8</button>
+        <button class="calculator__button" onclick="receiveNumber(9)">9</button>
+        <button class="calculator__button orange" onclick="receiveOperation('*')">×</button>
+        
+        <button class="calculator__button" onclick="receiveNumber(4)">4</button>
+        <button class="calculator__button" onclick="receiveNumber(5)">5</button>
+        <button class="calculator__button" onclick="receiveNumber(6)">6</button>
+        <button class="calculator__button orange" onclick="receiveOperation('-')">−</button>
+        
+        <button class="calculator__button" onclick="receiveNumber(1)">1</button>
+        <button class="calculator__button" onclick="receiveNumber(2)">2</button>
+        <button class="calculator__button" onclick="receiveNumber(3)">3</button>
+        <button class="calculator__button orange" onclick="receiveOperation('+')">+</button>
+        
+        <button class="calculator__button" id="calculator__button-0" onclick="receiveNumber(0)">
+          0
+        </button>
+        <button class="calculator__button" onclick="receiveNumber('.')">.</button>
+        <button class="calculator__button orange" onclick="calculateSum()">=</button>
+      </div>
+    </form>
+  
+  </div>
+
+  <script src="calculate.js"></script>
+</body>
+</html>
