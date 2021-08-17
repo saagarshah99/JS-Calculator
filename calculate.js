@@ -1,8 +1,6 @@
-// TODO: convert to arrow functions
-
 //receiving a number as input and adding to textbox
-let firstNumber = []; let secondNumber;
-function receiveNumber(numberInput)
+let firstNumber; let secondNumber;
+const receiveNumber = (numberInput) =>
 {
   event.preventDefault();
   let calculateInputText = document.getElementById("txtCalculator");
@@ -22,7 +20,7 @@ function receiveNumber(numberInput)
 }
 
 //numbers generally don't start with 0
-function removeStartingZero()
+const removeStartingZero = () =>
 {
   let calculateInputText = document.getElementById("txtCalculator");
   
@@ -34,7 +32,7 @@ function removeStartingZero()
 
 //receiving a specified operation and marking it as pending
 let pendingOperation;
-function receiveOperation(operationInput)
+const receiveOperation = (operationInput) =>
 {
   event.preventDefault();
   
@@ -46,7 +44,7 @@ function receiveOperation(operationInput)
 }
 
 //running the final calculation by running through series of switch cases
-function calculateSum()
+const calculateSum = () =>
 {
   event.preventDefault();
   let calculateInputText = document.getElementById("txtCalculator");
@@ -72,13 +70,11 @@ function calculateSum()
 }
 
 //resetting current calculator to 0 (default state upon loading page)
-function resetCalculator()
+const resetCalculator = () =>
 {
   document.getElementById("txtCalculator").value = 0;
-  pendingOperation = null;
-  
-  firstNumber[0] = 0; firstNumber[1] = false;
-  secondNumber = 0;
+  pendingOperation = null;  
+  firstNumber = [0, false]; secondNumber = 0;
 }
 resetCalculator();
 
