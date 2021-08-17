@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+$primary-blue: rgb(10, 218, 255);
+
 // reset rule
 *
 {
@@ -26,19 +28,19 @@ body
   height: auto;
   border-radius: 20px;
   background-color: rgb(58, 55, 55);
-
+  
   //calculator textbox
   &__input
   {
-    overflow: auto; //TODO: keep scrolling right when there are too many digits on the screen
+    overflow: scroll;
     outline: none;
     background: none;
     border: none;  
     padding: 10px;
     width: 100%;
     border-bottom: 2px solid white;
-    color: white;
     text-align: right;
+    color: $primary-blue;
     font-size: 4vw;
   }
 
@@ -56,23 +58,26 @@ body
       background: rgba(0, 0, 0, 0.5);
       padding: 2vw;
       height: auto;
-      color: white;
+      color: $primary-blue;
       border-radius: 50px;
       font-size: 2vw;
       cursor: pointer;
     
-      &:hover {background: limegreen;}
+      &:hover 
+      {
+        background: limegreen; 
+        color: white; 
+        font-weight: bold;
+      }
     }
     
     //more specific button styles
     .light 
     {
-      background: lightgray; 
-      color: black;
-
-      &:hover {color: white;}
+      background: gray; 
+      font-weight: bolder;
     }    
-    .orange {background: orange;}    
+    .orange {background: rgb(15, 56, 75);}    
     #calculator__button- {&0 {grid-column: 1/ span 2;}} //1 button taking up space of 2
   }
 }
