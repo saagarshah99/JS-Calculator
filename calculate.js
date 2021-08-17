@@ -1,6 +1,5 @@
 // TODO: convert to arrow functions
 
-//TODO: potentially use session storage to maintain this information, reset function would clear the data in there
 let pendingOperation; 
 
 //receiving a number as input and adding to textbox
@@ -17,7 +16,7 @@ function receiveNumber(numberInput)
   }
   else
   {
-    secondNumber += numberInput;
+    secondNumber += String(numberInput);
     calculateInputText.value = String(secondNumber);
   }
   
@@ -83,3 +82,41 @@ function resetCalculator()
   secondNumber = 0;
 }
 resetCalculator();
+
+
+
+// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
+// TODO: temporarily highlight button as if it was clicked using mouse
+window.addEventListener("keydown", function(event) 
+{
+  event.preventDefault();
+
+  switch(event.code) {
+    // case "ShiftLeft": //TODO: handle key combinations with shift key
+    
+    //mathematical operation keys
+    case "NumpadAdd": receiveOperation("+"); break;
+    case "Minus": case "NumpadSubtract": receiveOperation("-"); break;
+    case "NumpadMultiply": receiveOperation("*"); break;
+    case "Slash": case "NumpadDivide": receiveOperation("/"); break;
+    
+    //regular number and number pad keys
+    case "Digit0": case "Numpad0": receiveNumber(0); break;
+    case "Digit1": case "Numpad1": receiveNumber(1); break;
+    case "Digit2": case "Numpad2": receiveNumber(2); break;
+    case "Digit3": case "Numpad3": receiveNumber(3); break;
+    case "Digit4": case "Numpad4": receiveNumber(4); break;
+    case "Digit5": case "Numpad5": receiveNumber(5); break;
+    case "Digit6": case "Numpad6": receiveNumber(6); break;
+    case "Digit7": case "Numpad7": receiveNumber(7); break;
+    case "Digit8": case "Numpad8": receiveNumber(8); break;
+    case "Digit9": case "Numpad9": receiveNumber(9); break;
+    case "Period": case "NumpadDecimal": receiveNumber("."); break;
+    
+    //equals and both enter keys to get answer
+    case "Equal": case "Enter": case "NumpadEnter": calculateSum(); break;
+
+    case "Escape": resetCalculator(); break; //clear all input/output    
+  }
+
+}, true);
