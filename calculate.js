@@ -1,12 +1,10 @@
 // TODO: convert to arrow functions
 
-//global variables
-let firstNumber = []; let secondNumber;
-let pendingOperation; let runningTotal;
-
-
+//TODO: potentially use session storage to maintain this information, reset function would clear the data in there
+let pendingOperation; 
 
 //receiving a number as input and adding to textbox
+let firstNumber = []; let secondNumber;
 function receiveNumber(numberInput)
 {
   event.preventDefault();
@@ -42,42 +40,22 @@ function receiveOperation(operationInput)
 {
   event.preventDefault();
   
-  firstNumber[1] = true; //so the program knows to move on to the next number
+  firstNumber[1] = true; //program knows to move on to second number
   
   pendingOperation = operationInput;  
   
   document.getElementById("txtCalculator").value = "0";
 }
 
-//running the final calculation and loading answer into textbox
+//running the final calculation by running through series of switch cases
 function calculateSum()
 {
   event.preventDefault();
+  let calculateInputText = document.getElementById("txtCalculator");
 
-  whichOperation();  
-  
-  document.getElementById("txtCalculator").value = runningTotal;
-  removeStartingZero();
-}
-
-//resetting current calculator to 0 (default state upon loading page)
-function resetCalculator()
-{
-  document.getElementById("txtCalculator").value = 0;
-  runningTotal = 0;
-  
-  firstNumber[0] = 0; firstNumber[1] = false;
-  secondNumber = 0;
-}
-resetCalculator();
-
-
-
-//performing the requested calculation by running through a series of switch cases
-function whichOperation()
-{
   firstNumber[0] = parseFloat(firstNumber[0]);
-  secondNumber = parseFloat(document.getElementById("txtCalculator").value);
+  secondNumber = parseFloat(calculateInputText.value);
+  let runningTotal;
   
   switch(pendingOperation)
   {
@@ -88,4 +66,20 @@ function whichOperation()
     case("%"): runningTotal = (firstNumber[0]/100) * secondNumber; break;
     case("root"): runningTotal = Math.sqrt(secondNumber); break;
   }
+  
+  calculateInputText.value = runningTotal; //loading answer into textbox
+  firstNumber[0] = runningTotal; secondNumber = 0;
+
+  removeStartingZero();
 }
+
+//resetting current calculator to 0 (default state upon loading page)
+function resetCalculator()
+{
+  document.getElementById("txtCalculator").value = 0;
+  pendingOperation = null;
+  
+  firstNumber[0] = 0; firstNumber[1] = false;
+  secondNumber = 0;
+}
+resetCalculator();
