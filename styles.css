@@ -28,8 +28,8 @@ body {
   padding: 10px;
   width: 100%;
   border-bottom: 2px solid white;
-  color: white;
   text-align: right;
+  color: #0adaff;
   font-size: 4vw;
 }
 .calculator__buttons {
@@ -42,23 +42,21 @@ body {
   background: rgba(0, 0, 0, 0.5);
   padding: 2vw;
   height: auto;
-  color: white;
+  color: #0adaff;
   border-radius: 50px;
   font-size: 2vw;
   cursor: pointer;
 }
 .calculator__buttons .calculator__button:hover {
   background: limegreen;
+  color: white;
+  font-weight: bold;
 }
 .calculator__buttons .light {
-  background: lightgray;
-  color: black;
-}
-.calculator__buttons .light:hover {
-  color: white;
+  background: gray;
 }
 .calculator__buttons .orange {
-  background: orange;
+  background: #0f384b;
 }
 .calculator__buttons #calculator__button-0 {
   grid-column: 1/span 2;
