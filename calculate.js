@@ -1,7 +1,5 @@
 // TODO: convert to arrow functions
 
-let pendingOperation; 
-
 //receiving a number as input and adding to textbox
 let firstNumber = []; let secondNumber;
 function receiveNumber(numberInput)
@@ -35,6 +33,7 @@ function removeStartingZero()
 }
 
 //receiving a specified operation and marking it as pending
+let pendingOperation;
 function receiveOperation(operationInput)
 {
   event.preventDefault();
@@ -83,9 +82,6 @@ function resetCalculator()
 }
 resetCalculator();
 
-
-
-// https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 // TODO: temporarily highlight button as if it was clicked using mouse
 window.addEventListener("keydown", function(event) 
 {
@@ -93,7 +89,7 @@ window.addEventListener("keydown", function(event)
 
   switch(event.code) {
     // case "ShiftLeft": //TODO: handle key combinations with shift key
-    
+
     //mathematical operation keys
     case "NumpadAdd": receiveOperation("+"); break;
     case "Minus": case "NumpadSubtract": receiveOperation("-"); break;
