@@ -75,8 +75,7 @@ body
     .light 
     {
       background: gray; 
-      // color: black;
-
+      font-weight: bolder;
     }    
     .orange {background: rgb(15, 56, 75);}    
     #calculator__button- {&0 {grid-column: 1/ span 2;}} //1 button taking up space of 2
