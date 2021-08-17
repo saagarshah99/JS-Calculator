@@ -32,7 +32,7 @@ body
   //calculator textbox
   &__input
   {
-    overflow: auto; //TODO: keep scrolling right when there are too many digits on the screen
+    overflow: scroll;
     outline: none;
     background: none;
     border: none;  
