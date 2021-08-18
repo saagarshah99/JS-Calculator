@@ -79,36 +79,59 @@ const resetCalculator = () =>
 resetCalculator();
 
 // TODO: temporarily highlight button as if it was clicked using mouse
-window.addEventListener("keydown", function(event) 
+document.addEventListener("keydown", function(event) 
 {
   event.preventDefault();
+
+  let whichButton;
 
   switch(event.code) {
     // case "ShiftLeft": //TODO: handle key combinations with shift key
 
     //mathematical operation keys
-    case "NumpadAdd": receiveOperation("+"); break;
-    case "Minus": case "NumpadSubtract": receiveOperation("-"); break;
-    case "NumpadMultiply": receiveOperation("*"); break;
-    case "Slash": case "NumpadDivide": receiveOperation("/"); break;
+    case "NumpadAdd": receiveOperation("+"); 
+      whichButton="plus"; break;
+    case "Minus": case "NumpadSubtract": receiveOperation("-"); 
+      whichButton="minus"; break;
+    case "NumpadMultiply": receiveOperation("*"); 
+      whichButton="multiply"; break;
+    case "Slash": case "NumpadDivide": receiveOperation("/"); 
+      whichButton="divide"; break;
     
     //regular number and number pad keys
-    case "Digit0": case "Numpad0": receiveNumber(0); break;
-    case "Digit1": case "Numpad1": receiveNumber(1); break;
-    case "Digit2": case "Numpad2": receiveNumber(2); break;
-    case "Digit3": case "Numpad3": receiveNumber(3); break;
-    case "Digit4": case "Numpad4": receiveNumber(4); break;
-    case "Digit5": case "Numpad5": receiveNumber(5); break;
-    case "Digit6": case "Numpad6": receiveNumber(6); break;
-    case "Digit7": case "Numpad7": receiveNumber(7); break;
-    case "Digit8": case "Numpad8": receiveNumber(8); break;
-    case "Digit9": case "Numpad9": receiveNumber(9); break;
-    case "Period": case "NumpadDecimal": receiveNumber("."); break;
+    case "Digit0": case "Numpad0": receiveNumber(0); whichButton="0"; break;
+    case "Digit1": case "Numpad1": receiveNumber(1); whichButton="1"; break;
+    case "Digit2": case "Numpad2": receiveNumber(2); whichButton="2"; break;
+    case "Digit3": case "Numpad3": receiveNumber(3); whichButton="3"; break;
+    case "Digit4": case "Numpad4": receiveNumber(4); whichButton="4"; break;
+    case "Digit5": case "Numpad5": receiveNumber(5); whichButton="5"; break;
+    case "Digit6": case "Numpad6": receiveNumber(6); whichButton="6"; break;
+    case "Digit7": case "Numpad7": receiveNumber(7); whichButton="7"; break;
+    case "Digit8": case "Numpad8": receiveNumber(8); whichButton="8"; break;
+    case "Digit9": case "Numpad9": receiveNumber(9); whichButton="9"; break;
+    case "Period": case "NumpadDecimal": receiveNumber("."); whichButton="decimal"; break;
     
     //equals and both enter keys to get answer
-    case "Equal": case "Enter": case "NumpadEnter": calculateSum(); break;
+    case "Equal": case "Enter": case "NumpadEnter": 
+      calculateSum(); whichButton="equals"; break;
 
-    case "Escape": resetCalculator(); break; //clear all input/output    
+    //clear all input/output    
+    case "Escape": resetCalculator(); whichButton="reset"; break; 
   }
-
+  
+  changeButtonColour(whichButton);
+  
 }, true);
+
+//temporarily highlight button when keyboard input is detected
+const changeButtonColour = (whichButton) =>
+{
+  let buttonStyle = document.getElementById("calculator__button-"+whichButton).style;
+  
+  buttonStyle.backgroundColor = "limegreen"; buttonStyle.color = "white"; 
+
+  setTimeout(function() 
+  {
+    buttonStyle.backgroundColor = ""; buttonStyle.color = "";
+  }, 200);
+}

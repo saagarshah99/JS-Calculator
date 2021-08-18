@@ -14,32 +14,51 @@
       <input type="number" class="calculator__input" id="txtCalculator" 
       value="0" readonly style="-moz-appearance: textfield;" />
     
+      <!-- TODO: generic these using JS -->
       <div class="calculator__buttons">
-        <input type="reset" class="calculator__button light" onclick="resetCalculator()" value="C">
-        <button class="calculator__button light" onclick="receiveOperation('root')">&Sqrt;</button>
-        <button class="calculator__button light" onclick="receiveOperation('%')">%</button>
-        <button class="calculator__button orange" onclick="receiveOperation('/')">&divide;</button>
+        <input type="reset" class="calculator__button light" 
+        id="calculator__button-reset" onclick="resetCalculator()" value="C">
+        <button class="calculator__button light" id="calculator__button-root" 
+        onclick="receiveOperation('root')">&Sqrt;</button>
+        <button class="calculator__button light" id="calculator__button-percent" 
+        onclick="receiveOperation('%')">%</button>
+        <button class="calculator__button orange" id="calculator__button-divide"
+        onclick="receiveOperation('/')">&divide;</button>
         
-        <button class="calculator__button" onclick="receiveNumber(7)">7</button>
-        <button class="calculator__button" onclick="receiveNumber(8)">8</button>
-        <button class="calculator__button" onclick="receiveNumber(9)">9</button>
-        <button class="calculator__button orange" onclick="receiveOperation('*')">×</button>
+        <button class="calculator__button" id="calculator__button-7" 
+        onclick="receiveNumber(7)">7</button>
+        <button class="calculator__button" id="calculator__button-8"
+        onclick="receiveNumber(8)">8</button>
+        <button class="calculator__button" id="calculator__button-9"
+        onclick="receiveNumber(9)">9</button>
+        <button class="calculator__button orange" id="calculator__button-multiply"
+        onclick="receiveOperation('*')">×</button>
         
-        <button class="calculator__button" onclick="receiveNumber(4)">4</button>
-        <button class="calculator__button" onclick="receiveNumber(5)">5</button>
-        <button class="calculator__button" onclick="receiveNumber(6)">6</button>
-        <button class="calculator__button orange" onclick="receiveOperation('-')">−</button>
+        <button class="calculator__button" id="calculator__button-4"
+        onclick="receiveNumber(4)">4</button>
+        <button class="calculator__button" id="calculator__button-5"
+        onclick="receiveNumber(5)">5</button>
+        <button class="calculator__button" id="calculator__button-6"
+        onclick="receiveNumber(6)">6</button>
+        <button class="calculator__button orange" id="calculator__button-minus"
+        onclick="receiveOperation('-')">−</button>
         
-        <button class="calculator__button" onclick="receiveNumber(1)">1</button>
-        <button class="calculator__button" onclick="receiveNumber(2)">2</button>
-        <button class="calculator__button" onclick="receiveNumber(3)">3</button>
-        <button class="calculator__button orange" onclick="receiveOperation('+')">+</button>
+        <button class="calculator__button" id="calculator__button-1"
+        onclick="receiveNumber(1)">1</button>
+        <button class="calculator__button" id="calculator__button-2"
+        onclick="receiveNumber(2)">2</button>
+        <button class="calculator__button" id="calculator__button-3"
+        onclick="receiveNumber(3)">3</button>
+        <button class="calculator__button orange" id="calculator__button-plus"
+        onclick="receiveOperation('+')">+</button>
         
         <button class="calculator__button" id="calculator__button-0" onclick="receiveNumber(0)">
           0
         </button>
-        <button class="calculator__button" onclick="receiveNumber('.')">.</button>
-        <button class="calculator__button orange" onclick="calculateSum()">=</button>
+        <button class="calculator__button" id="calculator__button-decimal"
+        onclick="receiveNumber('.')">.</button>
+        <button class="calculator__button orange" id="calculator__button-equals"
+        onclick="calculateSum()">=</button>
       </div>
     </form>
   
