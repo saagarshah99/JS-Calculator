@@ -23,7 +23,9 @@ body
 //whole calculator container
 .calculator   
 {
+  min-width: 220px;
   max-width: 400px;
+  // max-height: 80vh;
   width: 50vw;
   height: auto;
   border-radius: 20px;
@@ -41,7 +43,7 @@ body
     border-bottom: 2px solid white;
     text-align: right;
     color: $primary-blue;
-    font-size: 4vw;
+    font-size: 5vw;
   }
 
   //container for buttons
@@ -79,5 +81,26 @@ body
     }    
     .orange {background: rgb(15, 56, 75);}    
     #calculator__button- {&0 {grid-column: 1/ span 2;}} //1 button taking up space of 2
+  }
+}
+
+@media screen and (max-width: 900px)
+{
+  .calculator   
+  {
+    &__buttons 
+    {
+      .calculator__button {font-size: 3vw;}
+    }
+  }
+}
+@media screen and (max-width: 700px)
+{
+  .calculator   
+  {
+    &__buttons 
+    {
+      .calculator__button {font-size: 4vw;}
+    }
   }
 }
