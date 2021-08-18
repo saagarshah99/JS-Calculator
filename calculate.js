@@ -1,3 +1,5 @@
+/****************************MAIN CALCULATOR LOGIC*****************************/
+
 //receiving a number as input and adding to textbox
 let firstNumber; let secondNumber;
 const receiveNumber = (numberInput) =>
@@ -78,6 +80,12 @@ const resetCalculator = () =>
 }
 resetCalculator();
 
+
+
+
+/****************************KEYBOARD INPUT*****************************/
+
+//handling keyboard input/shortcuts
 document.addEventListener("keydown", function(event) 
 {
   event.preventDefault();
@@ -120,14 +128,11 @@ document.addEventListener("keydown", function(event)
 //temporarily highlight button when keyboard input is detected
 const changeButtonColour = (whichButton) =>
 {
-  let buttonStyle = document.getElementById("calculator__button-"+whichButton).style;
+  const buttonStyle = document.getElementById("calculator__button-"+whichButton).style;
   
   buttonStyle.backgroundColor = "limegreen"; 
   buttonStyle.color = "white"; 
   buttonStyle.transition = "0.2s";
 
-  setTimeout(function() 
-  {
-    buttonStyle.backgroundColor = ""; buttonStyle.color = "";
-  }, 200);
+  setTimeout(function() {buttonStyle.backgroundColor = ""; buttonStyle.color = "";}, 200);
 }
