@@ -10,3 +10,5 @@ Here is a basic calculator implemented using HTML, CSS and JavaScript. It utilis
 * **Subtract**: Minus or NumpadSubtract Key
 * **Multiply**: NumpadMultiply Key
 * **Divide**: Slash or NumpadDivide 
+* **Percentage**: P
+* **Square Root**: S
