@@ -60,7 +60,7 @@ const calculateSum = () =>
     case("*"): runningTotal = firstNumber[0] * secondNumber; break;
     case("/"): runningTotal = firstNumber[0] / secondNumber; break;    
     case("%"): runningTotal = (firstNumber[0]/100) * secondNumber; break;
-    case("root"): runningTotal = Math.sqrt(secondNumber); break;
+    case("sqrt"): runningTotal = Math.sqrt(secondNumber); break;
   }
   
   calculateInputText.value = runningTotal; //loading answer into textbox
@@ -89,14 +89,12 @@ document.addEventListener("keydown", function(event)
     // case "ShiftLeft": //TODO: handle key combinations with shift key
 
     //mathematical operation keys
-    case "NumpadAdd": receiveOperation("+"); 
-      whichButton="plus"; break;
-    case "Minus": case "NumpadSubtract": receiveOperation("-"); 
-      whichButton="minus"; break;
-    case "NumpadMultiply": receiveOperation("*"); 
-      whichButton="multiply"; break;
-    case "Slash": case "NumpadDivide": receiveOperation("/"); 
-      whichButton="divide"; break;
+    case "NumpadAdd": receiveOperation("+"); whichButton="plus"; break;
+    case "Minus": case "NumpadSubtract": receiveOperation("-"); whichButton="minus"; break;
+    case "NumpadMultiply": receiveOperation("*"); whichButton="multiply"; break;
+    case "Slash": case "NumpadDivide": receiveOperation("/"); whichButton="divide"; break;
+    case "KeyP": receiveOperation("%"); whichButton="percent"; break;
+    case "KeyS": receiveOperation("sqrt"); whichButton="sqrt"; break;
     
     //regular number and number pad keys
     case "Digit0": case "Numpad0": receiveNumber(0); whichButton="0"; break;
@@ -112,11 +110,9 @@ document.addEventListener("keydown", function(event)
     case "Period": case "NumpadDecimal": receiveNumber("."); whichButton="decimal"; break;
     
     //equals and both enter keys to get answer
-    case "Equal": case "Enter": case "NumpadEnter": 
-      calculateSum(); whichButton="equals"; break;
+    case "Equal": case "Enter": case "NumpadEnter": calculateSum(); whichButton="equals"; break;
 
-    //clear all input/output    
-    case "Escape": resetCalculator(); whichButton="reset"; break; 
+    case "Escape": resetCalculator(); whichButton="reset"; break; //clear all input/output    
   }
   
   changeButtonColour(whichButton);
@@ -128,7 +124,9 @@ const changeButtonColour = (whichButton) =>
 {
   let buttonStyle = document.getElementById("calculator__button-"+whichButton).style;
   
-  buttonStyle.backgroundColor = "limegreen"; buttonStyle.color = "white"; 
+  buttonStyle.backgroundColor = "limegreen"; 
+  buttonStyle.color = "white"; 
+  buttonStyle.transition = "0.2s";
 
   setTimeout(function() 
   {
