@@ -78,16 +78,14 @@ const resetCalculator = () =>
 }
 resetCalculator();
 
-// TODO: temporarily highlight button as if it was clicked using mouse
 document.addEventListener("keydown", function(event) 
 {
   event.preventDefault();
 
   let whichButton;
 
-  switch(event.code) {
-    // case "ShiftLeft": //TODO: handle key combinations with shift key
-
+  switch(event.code) 
+  {
     //mathematical operation keys
     case "NumpadAdd": receiveOperation("+"); whichButton="plus"; break;
     case "Minus": case "NumpadSubtract": receiveOperation("-"); whichButton="minus"; break;
