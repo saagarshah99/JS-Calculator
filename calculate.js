@@ -20,6 +20,7 @@ const receiveNumber = (numberInput) =>
   
   removeStartingZero();
 }
+//[...Array(5).keys()]; //create new array containing numbers 0-4
 
 //numbers generally don't start with 0
 const removeStartingZero = () =>
