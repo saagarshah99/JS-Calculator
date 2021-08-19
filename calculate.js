@@ -1,5 +1,16 @@
 /****************************MAIN CALCULATOR LOGIC*****************************/
 
+//numbers generally don't start with 0
+const removeStartingZero = () =>
+{
+  let calculateInputText = document.getElementById("txtCalculator");
+  
+  if(calculateInputText.value[0] == 0) 
+  {
+    calculateInputText.value -= calculateInputText.value[0];
+  }
+}
+
 //receiving a number as input and adding to textbox
 let firstNumber; let secondNumber;
 const receiveNumber = (numberInput) =>
@@ -21,17 +32,6 @@ const receiveNumber = (numberInput) =>
   removeStartingZero();
 }
 //[...Array(5).keys()]; //create new array containing numbers 0-4
-
-//numbers generally don't start with 0
-const removeStartingZero = () =>
-{
-  let calculateInputText = document.getElementById("txtCalculator");
-  
-  if(calculateInputText.value[0] == 0) 
-  {
-    calculateInputText.value -= calculateInputText.value[0];
-  }
-}
 
 //receiving a specified operation and marking it as pending
 let pendingOperation;
