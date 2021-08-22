@@ -84,6 +84,37 @@ resetCalculator();
 
 
 
+
+
+/****************************BUTTON EVENT HANDLERS*****************************/
+
+const buttonIDStart = "#calculator__button-";
+
+//number, decimal, reset and equals buttons
+for(let i=0; i<=9; i++) 
+{
+  const decimalButton = document.querySelector(buttonIDStart+"decimal");  
+  if(i === 0) decimalButton.addEventListener("click", e => receiveNumber("."));
+  document.querySelector(buttonIDStart+i).addEventListener("click",e => receiveNumber(i));
+};
+document.querySelector(buttonIDStart+"reset").addEventListener("click", e => resetCalculator());
+document.querySelector(buttonIDStart+"equals").addEventListener("click", e => calculateSum());
+
+//operation buttons
+const operationAppendices = [
+  ["sqrt", "sqrt"], ["percent", "%"], 
+  ["divide", "/"], ["multiply", "*"], ["minus", "-"], ["plus", "+"]
+];
+operationAppendices.forEach((operation, i) => 
+{
+  const currentButton = document.querySelector(buttonIDStart+operation[0]);
+  currentButton.addEventListener("click", e => receiveOperation(operation[1]));
+})
+
+
+
+
+
 /****************************KEYBOARD INPUT*****************************/
 
 //handling keyboard input/shortcuts
