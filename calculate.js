@@ -64,6 +64,7 @@ const calculateSum = () =>
     case("/"): runningTotal = firstNumber[0] / secondNumber; break;    
     case("%"): runningTotal = (firstNumber[0]/100) * secondNumber; break;
     case("sqrt"): runningTotal = Math.sqrt(secondNumber); break;
+    default: break;
   }
   
   calculateInputText.value = runningTotal; //loading answer into textbox
