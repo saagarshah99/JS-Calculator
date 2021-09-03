@@ -13,38 +13,57 @@
       
       <!-- calculator input text -->
       <input type="number" class="calculator__input" id="txtCalculator" 
-      value="0" readonly style="-moz-appearance: textfield;" />
+      data-cy="output" value="0" readonly style="-moz-appearance: textfield;" />
     
       <div class="calculator__buttons">
 
         <!-- reset, square root, percent and divide buttons -->
-        <input type="reset" class="calculator__button light" value="C" id="calculator__button-reset">
-        <input type="button" class="calculator__button light" value="&Sqrt;" id="calculator__button-sqrt">
-        <input type="button" class="calculator__button light" value="%" id="calculator__button-percent">
-        <input type="button" class="calculator__button orange" value="&divide;" id="calculator__button-divide">
+        <input type="reset" class="calculator__button light" 
+        data-cy="reset" value="C" id="calculator__button-reset">
+        <input type="button" class="calculator__button light" 
+        data-cy="sqrt" value="&Sqrt;" id="calculator__button-sqrt">
+        <input type="button" class="calculator__button light" 
+        data-cy="percent" value="%" id="calculator__button-percent">
+        <input type="button" class="calculator__button orange" 
+        data-cy="divide" value="&divide;" id="calculator__button-divide">
         
         <!-- #7-9 and multiply buttons -->
-        <input type="button" class="calculator__button" value="7" id="calculator__button-7">
-        <input type="button" class="calculator__button" value="8" id="calculator__button-8">
-        <input type="button" class="calculator__button" value="9" id="calculator__button-9">
-        <input type="button" class="calculator__button orange" value="x" id="calculator__button-multiply">
+        <input type="button" class="calculator__button" 
+        data-cy="7" value="7" id="calculator__button-7">
+        <input type="button" class="calculator__button" 
+        data-cy="8" value="8" id="calculator__button-8">
+        <input type="button" class="calculator__button" 
+        data-cy="9" value="9" id="calculator__button-9">
+        <input type="button" class="calculator__button orange" 
+        data-cy="multiply" value="x" id="calculator__button-multiply">
         
         <!-- #4-6 and minus buttons -->
-        <input type="button" class="calculator__button" value="4" id="calculator__button-4">
-        <input type="button" class="calculator__button" value="5" id="calculator__button-5">
-        <input type="button" class="calculator__button" value="6" id="calculator__button-6">
-        <input type="button" class="calculator__button orange" value="-" id="calculator__button-minus">
+        <input type="button" class="calculator__button" 
+        data-cy="4" value="4" id="calculator__button-4">
+        <input type="button" class="calculator__button" 
+        data-cy="5" value="5" id="calculator__button-5">
+        <input type="button" class="calculator__button" 
+        data-cy="6" value="6" id="calculator__button-6">
+        <input type="button" class="calculator__button orange" 
+        data-cy="minus" value="-" id="calculator__button-minus">
         
         <!-- #1-3 and plus buttons -->
-        <input type="button" class="calculator__button" value="1" id="calculator__button-1">
-        <input type="button" class="calculator__button" value="2" id="calculator__button-2">
-        <input type="button" class="calculator__button" value="3" id="calculator__button-3">
-        <input type="button" class="calculator__button orange" value="+" id="calculator__button-plus">
+        <input type="button" class="calculator__button" 
+        data-cy="1" value="1" id="calculator__button-1">
+        <input type="button" class="calculator__button" 
+        data-cy="2" value="2" id="calculator__button-2">
+        <input type="button" class="calculator__button" 
+        data-cy="3" value="3" id="calculator__button-3">
+        <input type="button" class="calculator__button orange" 
+        data-cy="plus" value="+" id="calculator__button-plus">
         
         <!-- 0, decimal and equals button -->
-        <input type="button" class="calculator__button" value="0" id="calculator__button-0">
-        <input type="button" class="calculator__button" value="." id="calculator__button-decimal">
-        <input type="button" class="calculator__button orange" value="=" id="calculator__button-equals">
+        <input type="button" class="calculator__button" 
+        data-cy="0" value="0" id="calculator__button-0">
+        <input type="button" class="calculator__button" 
+        data-cy="decimal" value="." id="calculator__button-decimal">
+        <input type="button" class="calculator__button orange" 
+        data-cy="equals" value="=" id="calculator__button-equals">
       </div>
     </form>  
   </div>
