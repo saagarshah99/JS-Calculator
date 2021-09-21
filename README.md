@@ -1,4 +1,7 @@
 # JS-Calculator
+
+<img src="./Calculator.png" />
+
 Here is a basic calculator implemented using HTML, CSS and JavaScript. It utilises display grid to arrange buttons in the appropriate positions and display flex for responsiveness.
 
 ## Technologies Used:
